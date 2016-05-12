@@ -1,0 +1,39 @@
+Methods (functions)
+Methods are how code is reused. 
+- Declaring a method is done using keyword "def" and closed with "end"
+-- Logic = code inside method that gets executed 
+
+Syntax = 
+def method_name(parameters,.., paremeter = "default_value")
+ #perform some logic 
+end
+
+Methods allow logic extraction to which enables program flexibility 
+- Methods called with name and passed argument if applicable
+- When arguments are passed they are assigned to the parameter variable
+-- Parameters(arguments) are scoped at the method level
+*default argument values can be given to parameters 
+--- Methods allow you to dynamically modify your entire usage in one location
+** Parenthese are optional when it comes to method calling and argument passing
+
+method_name("some_argument") = method_name "some_argument"
+when caller exist --> a_caller.some_method(argument)
+
+methods are capable of modifying or mutating the caller - permanently changing passed argument
+Only some methods cause variable mutation others do not. Verify mutation through documentation 
+
+Return 
+- Methods always return the last line of an expression unless another explicit return takes place before
+
+syntax:
+def my_method(argument)
+  return argument + 3
+  argument + 2 
+end 
+
+explicit return will take priority all follow lines are ignored 
+*You are able to chain method in because the last line of the expression is implicitly returned
+
+Passing methods to other methods
+due to implicit returns methods can be passed to other methods as arguments to find solution.
+

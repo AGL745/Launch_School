@@ -1,0 +1,36 @@
+Variables are used to label and store information for use in the future
+
+Names must be identifiable in the futue and are assigned using the equal operator
+first_name = "Jacky"
+
+Variables are not deeply linked to each other. They point to values in memory 
+a = 4, b = a, a = 7... b = 4
+--
+Getting user input is possibile using the gets method
+-gets stands for get string
+-- syntax = some_variable_name = gets (\n is the newline character) <-- represents enter key
+--- .chomp removes the carriage from your gets input
+---- syntax = some_var_name = gets.chomp
+*Chomp allows for use as intended by program
+--
+Variable Scope 
+- Var scope determines where and when a variable is available for use
+-- This availability is determined by blocks
+--- blocks are pieces of code followed by some sort of invocation.. {} or do/end
+*do/end does not always indicate a block
+* Inner scope has access to outer scoped variables 
+
+blocks vs method scope 
+blocks modify the global variable value when reassigned inside block
+methods create own scope and does not interfere with global variable value
+--
+Types of variables 
+- Five types of variables (Class, local, instance, global, constants)
+-- Constants, class, global, local, instance 
+Constants = THIS_IS_CONSTANT = availabe through application not usable inside methods because the have own scope
+Global = declared $global_variable - available throughout app
+Class = declared @@class_variable - available to specific class and class methods/instance methods (@@instances = 0 )
+Instance = declared @instance_variable = available through current instance of parent class 
+Local = declared can use ($ or $ w/ no capitalization) - variable = obeys all scoping laws
+
+
