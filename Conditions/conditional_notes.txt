@@ -1,0 +1,47 @@
+Notes: Ruby Conditionals
+--Data goes on a journey that you direct. Concept called conditional flow
+Conditionals are formed using if statements and equalities. 
+< , > , <= , >= , ==, !=, && , ||
+
+Conditional allow you to direct the traffic of data through your program by using the "if" keyword and equalities to direct data
+
+Examples
+if x == 3
+  puts "x is 3"
+end
+
+if x == 3
+  puts "x is 3"
+elsif x == 4 
+  puts "x is 4"
+end
+
+if x == 3
+  puts "x is 3"
+else
+  puts "x is Not 3"
+end
+
+-- One Line (Clean)
+if x == 3 then puts "x is 3" end
+-- if statement can also be placed behind comparitor expression
+puts "x is 3" if x == 3
+-- Reserved word "unless" does the opposite of if 
+puts "x is Not 3" unless x == 3
+
+unless x == 4 puts "x is not four"
+comparison reture boolean values.. either true or false 
+Order of Precedence 
+1. <=, <, >, <= Comparison
+2. ==, != Equality
+&& Logical AND
+|| Logical OR
+
+Ternary Operator 
+example
+
+true ? "this is true" : "this is not true"
+Interprettor evaluate the left expression first if true it then select first option following the question mark. If initial expression is false, execute code to the right of ":".
+
+Case Statement
+Case statement similar to if uses reserved words "case" "when" "else" and "end"  
