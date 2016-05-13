@@ -1,12 +1,12 @@
 Under 2000 lines of ruby code
 
 Good for services 
-Specifically design for APIs, web based apps, service
+Specifically designs APIs, web based apps, services
 
 Not a Framework
 - No config file
 - No project heiarchy 
-- Does not require the use of MVC
+- Does not require the use of MVC (Django/Rails)
 
 Sinatra - Used to handle HTTP request and responses
 
@@ -14,7 +14,7 @@ Used RACK interface for request
 -WRAP provide to allow interchange between front and back-end 
 
 Works with HTTP Message Object
--start line - <GET, PUT, DELETE, PATCH>
+-start line - <GET, PUT, DELETE, PATCH, POST>
 -Headers extra information (cookies etc)
 -Message Body - Provide text additional info (images)
 
@@ -26,8 +26,36 @@ Two Sintra Applications
 -Classic Approach
 Defined at the top level
 Adds methods to options class
+May cause code to be non-deployable to production environment 
 
 Modular Approach
 -Subclass sintra 
 -Allow sinatra to interface with class
--Sinatra::Base 
+-Sinatra::Base
+  -Does not recode top level object class
+  -Created from subclass  
+
+Installation Steps
+Requires Ruby
+Requires Sinatra
+- gem install sinatra
+Recommend use of  thin client
+= gem install thin
+
+sinatra base syntax
+- require 'sinatra'
+#Real quick hash
+['/first','/second','/third'].each do |route|
+  get route do
+    "\"#{route}" This is your first route using GET"\n
+  end
+
+  post route do
+    "\"#{route}" This is your second route using POST"\n
+
+  delete route do
+    "\"#{route}' This is your third route using DELETE"\n
+  end
+end
+   
+  

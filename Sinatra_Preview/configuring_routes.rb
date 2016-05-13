@@ -6,7 +6,7 @@ require 'sinatra'
 
 ['/this', '/that', '/other'].each do |route|
   get route do
-    "\"#{route}\" is my url path, using POST\n"
+    "\"#{route}\" is my url path, using GET\n"
   end
 
   post route do
