@@ -1,0 +1,33 @@
+Under 2000 lines of ruby code
+
+Good for services 
+Specifically design for APIs, web based apps, service
+
+Not a Framework
+- No config file
+- No project heiarchy 
+- Does not require the use of MVC
+
+Sinatra - Used to handle HTTP request and responses
+
+Used RACK interface for request 
+-WRAP provide to allow interchange between front and back-end 
+
+Works with HTTP Message Object
+-start line - <GET, PUT, DELETE, PATCH>
+-Headers extra information (cookies etc)
+-Message Body - Provide text additional info (images)
+
+Response to 
+Route = Composite of HTTP method or verb combined with URL pattern
+- based on get and post verbs 
+
+Two Sintra Applications 
+-Classic Approach
+Defined at the top level
+Adds methods to options class
+
+Modular Approach
+-Subclass sintra 
+-Allow sinatra to interface with class
+-Sinatra::Base 
