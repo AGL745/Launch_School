@@ -1,0 +1,51 @@
+Loops and Iterators 
+-Loop = repetitive execution of some block of code
+-Ruby Types
+  do/while, for, while 
+loop is the most basic ruby loop keywords
+#Example
+loop do
+  put some block of code
+  and  
+  breakstatement 
+end
+-will stop after pressing Ctrl+C or inserting a break statement inside block
+-break keyword allows you to get out of a loop 
+
+-next keyword allows you to skip the next iteration of the loop.. moving to next
+
+x = 5
+loop do 
+  x -= 2 
+  puts x 
+``if x == 1 
+    next
+  end
+  if x == -20 
+    break
+  end
+end
+
+break and next can be used with all ruby iterator constructs
+
+#While Loops 
+while (some boolean expression is not met) do
+  --code block
+  --adjust variable 
+end
+
+#Until Loops 
+until(keyword - some statement is met *boolean) do
+  block of code
+  modify conditional variable
+end
+
+do/while loop structure
+loop do 
+  puts "Do you want to quit.. enter 'Y': "
+  user_input = gets.chomp
+  if user_input != 'Y' 
+    break
+  end
+end
+
