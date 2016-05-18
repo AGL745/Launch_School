@@ -49,3 +49,19 @@ loop do
   end
 end
 
+#For Loops
+Syntax
+for i in 0..10 do
+  puts i
+end
+
+Iterators 
+- Methods that allow you to loop an array and conduct an operation on each index value 
+- 'each' method allows you to this operation
+names = ['Tim', 'Beth', 'Emma']
+names.each { |name| puts name}
+*name is a random variable inside pipes
+
+#Recursive Calls
+a method or function that calls itself during execution. 
+Think about it as building from a baseline situation 
