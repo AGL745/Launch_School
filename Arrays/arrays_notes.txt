@@ -1,0 +1,69 @@
+#Arrays 
+
+Creation of an array
+- new_array = [1,2,3,4]
+Array is a data structure used for store multiple type objects
+Organize is list based. 
+-Items are retreavable via array_name and index node
+-array_name[2] 
+-pop (take last)
+-push(push top)
+-array_name <<(shovel) 'some_object'
+
+Collect and map methods
+-Allow iteration over array and producing a new_array with block code executed
+-These methods are not distructive.. do not mutate the caller
+
+delete_at method allows deletion at a given index
+-this method is distructive and will mutate caller array 
+syntax new_array.delete_at(2)
+
+delete method also mutates but takes object value instead of index
+syntax = new_array.delete(3)  #would delete all index with value three
+
+Does not mutate returns new_array
+uniq method removes duplicates returns new array without duplicates
+new_array.uniq 
+*Adding !(bang) will make change destructive 
+new_array.uniq!
+
+Be careful of destructive method calls against and array. May lead to errors and confusion later
+
+Arrays can have other objects nested inside of them 
+new_array = [["The", "First"],["The","Second"]]
+new_array[1][0] = "The"
+
+unshift method is the opposite of pop adds item to the front of array
+new_array.unshift "Hello,there"
+
+To string representation of array
+new_array = [1,2,3,4,5]
+"It's done this way #{new_array}"
+Ruby is calling the to_s method on array
+
+Array methods
+my_array = [[1,2],3,5,6,[7,8]]
+my_array.include?(2) - returns boolean value
+my_array.flatten(my_array) - flattens nested arrays
+*[1,2,3,4,5,6,7,8]
+This method is not destructive returns new array
+
+my_array.each_index - Allows you to execute block on a particular index
+my_array.each_index |index_value| do
+  puts index_value
+end
+
+each_with_index { |val, idx| puts "#{idx}. #{val}"}
+
+my_array.sort - returns a sorted array
+my_array.product([4,6]) - returns array with every value with every other value outputted as array
+
+Each vs map
+Each run code on all elements in given array and if given block executes else return Enumerator
+a = [1, 2, 3]
+a.each { |w| puts w }
+also modify and print 
+a.each { |t| puts t + 2 }
+prints values and returns collection
+
+ 
