@@ -1,0 +1,98 @@
+Hashes Notes
+-Hashes are objected created in the key value pair format
+-Objects unlike Arrays(List) are not indexed in order but are trackable using key
+-Like Arrays Hash can hold various data types
+-Keys are often named using the symbol convention 
+
+Old syntax - old_syntax = {:name => 'bob'} 
+New syntax - new_syntax = {name: 'bob'} <-- No hash rocket required
+
+Adding to hash
+person = {name: 'Tim', height: '5.5ft'}
+person[:hair] = 'Black'
+person[:age] = 62
+
+Delete From Hash
+person.delete(:age) <-- same as array delete method 
+
+Retrieving Information 
+person[:name]
+
+Merging Two Hashes
+person.merge!(new_hash)
+
+Iterating over hash
+-Similar to iterator array
+-Use each method 
+
+person2 = {name: 'bob', height: '6ft', weight: '200', hair: 'brown'}
+person2.each do |key, value|
+  puts "Bob's #{key} is #{value}"
+end
+
+Hashes as Optional Parameters
+-Providing a hash with optional parameters allows me to create more expressive methods
+
+def greeting(name, options = {})
+  if options.empty?
+    puts "Hi, my name is #{name}"
+  else
+    puts "Hi, my name is #{name} and I'm #{options[:age]}" + years old and I live in #{options[:city]}."
+  end
+end
+
+greetings("Bob")
+greetings("Bob", {age: 63, city: "NYC"})
+
+Common convention for passing hash
+greeting("bob", age: 22, city: 'NYC')
+Curly braces are not required ({})
+
+Choosing Between Array and Hash Data Structures 
+Does data need specific label - Use hash (name:)
+Does order matter - Use array
+Do you need stack or a queue structure? Array are good at first-in-first-out queues or last-in-first-out stacks
+
+When not using symbols as keys (symbol:)
+{"height" => "6 ft"} - string as key
+{10 => "Dog"} - Integer as key
+{101.2 => "Dog"} - float as key
+{["height"] => "6ft"} - Array as key
+{{key: "key"} => "Hash as a key"}
+
+=> Hash rocket is necessary when not using symbol: format ({hash: "Value"})
+
+Common Hash Methods that deploy with hash class
+-has_key? - Checks for specific key and returns boolean value
+
+new_hash = {"Bob"=> 32, "Tim" => 31, "Dan" => 41}
+new_hash.has_key?("Dan") - True 
+new_hash.has_key?{"Derek") - False
+
+select = Allows block passing and return any key-value pair that evaluate to true when ran through the block
+new_hash.select { |k, v| k == "Bob"}
+return key: value pair
+new_hash.select { |k, v| k == "Bob" || v = 41 }
+{"Bob"=> 32, "Dan"=>41}
+
+fetch - pass given key and returns value if exists
+new_hash.fetch("Bob")
+32
+
+new_hash.fetch("Danny", "Danny isn't in this hash") <-- Additional parameter in event false
+
+to_a - method returns Array of hash(does not modify hash permanently)
+
+new_hash.to_a = [["Bob", 32],["Tim", 31],["Dan", 41]]
+-returns array of arrays 
+
+keys and values methods 
+new_hash.keys <-- returns all available keys
+new_hash.values <-- returns all available values
+returns and array of keys/values
+
+new_hash.values.each { |v| puts v }
+new_hash.keys.each do |k|
+  puts k
+end
+
