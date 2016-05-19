@@ -1,0 +1,68 @@
+Common Data formats
+-Comma seperated values
+-Javascript Object Notation
+-eXceL Spreadsheet - xls
+-HTML
+-XLS
+
+CLS and XLS/XLSX are used for importing and exporting tabular data 
+-Fit inside box
+-Requires add-on for XLS
+JSON and XML/HTML, plain text
+-Always you to describe nested characteristics of data
+Ruby features standard library which converts JSON to ruby Hash
+
+Extensible Markup Language - tool for define domain specific schematics.
+Web pages are constructed using HTML a standard form of XML
+Nokogiri gem required for parsing XML files and web pages (HTML)
+
+-Installing AXLSX gem for XLS parsing and nogokiri for XML parsing
+
+require 'json'
+require 'nokogiri'
+require 'axlsx'
+require 'csv'
+
+slashdot_articles = []
+File.open("slashdot.xml", "r") do |f|
+  doc = Nokogiri::XML(f)
+  slashdot_articles = doc.css('item').map { |i|
+    {
+      title: i.at_css('title').content,
+      link: i.at_css('link').content,
+      summary: i.at_css('description').content
+    }
+  }
+end
+
+This line below was used to get nokogiri installed properly 
+sudo + below
+gem install nokogiri -- --with-xml2-include=`xcrun --show-sdk-path`/usr/include/libxml2 --use-system-libraries
+
+
+feedzilla_articles = []
+File.open("feedzilla.json", "r") do |f|
+  items = JSON.parse(f.read)
+  feedzillar_articles = items['articles'].map {|a|
+    {
+      title: a['title'],
+      link: a['url'],
+      summary: a['summary']
+    }
+  }
+end
+
+sorted_articles = (feedzillar_articles + slashdot_articles).sort_by {|a| a[:title]}
+
+Exporting Data to CSV
+CSV.open("article.csv", "wb") do |csv|
+  sorted_articles.each { |a| csv << [ a[:title], a[:link], a[:summary]]}
+end
+
+pkg = Axlsx::Package.new
+pkg.workbook.add_worksheet(:name => "Articles") do |sheet|
+  sorted_articles.each { |a| sheet.add_row [a[:title], a[:link], a[:summary]]}
+end
+
+pkg.serialize("articles.xlsx")
+

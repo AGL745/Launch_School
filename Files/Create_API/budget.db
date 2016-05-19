@@ -1,0 +1,22 @@
+version =  '3.8.10.2' #DB Version
+db = 'wodb_el_v' + version + '#{Dir.pwd}/budget.db'
+
+DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/budget.db")
+ 
+ class Budget
+   include DataMapper::Resource
+   property :id, Serial
+   property :title, Text, :required => true
+   property :initial, Integer, :required => true
+   property :created_at, DateTime
+   property :updated_at, DateTime
+ end 
+ DataMapper.finalize.auto_upgrade!
+
+if File.exists?(db)
+  DataMapper.auto_upgrade!
+else
+  DataMapper.auto_migrate! #Erases and creates new db
+end
+
+

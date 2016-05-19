@@ -1,0 +1,77 @@
+Files allow information to be stored for future accessing.
+Variables created are deleted after .rb is completed executiing
+
+Files types visited
+-JSON - Javascript Object Notation
+-CSV - Comman Seperated Values
+-XML/HTML - Extensible Markup Language/Hypertext Markup Language 
+-XLS - eXceL Spreadsheet
+
+Creating a File
+my_file = File.new("simple_file.txt", "w+")
+--Creates a new file named simple_file.txt
+--access file using storage variable my_file
+-- "w+" argument allows for read and write
+--File created inside .irb directory
+--Close files after openning for security, performance, and overall flow issues
+my_file.close
+
+Opening Files
+Syntax = File.open("file_name", second_argument)
+r : read-only (starts at beginning of file)
+w : write-only (if exists overwrites everything in the file)
+w+ : read and write (if the file exists, overwrites everything in the file)
+a+ : read-write (if file exists, start at end of file, otherwise create new file)
+a+ <-- great for updating files
+
+Opening for Reading
+File.read("file_name") - outputs entire contents of the file
+File.readlines("file_name") - outputs individual lines returned in array
+
+Flow
+-OPEN
+-USE
+-CLOSE  
+
+Writing to File
+-write or puts
+puts makes new line
+write does not 
+
+Opening files with open method using block causes ruby to auto close unused files
+File.open("simple_file.txt", "w") {|file| file.write("adding first line of text")}
+
+File.read "file_name" --> prints to console
+
+Open File / Write to / Close File
+
+sample = File.open("simple_file.txt", "w+")
+sample.puts("another example of writing to a file")
+sample.close
+
+Inserting More Text
+File.open("simple_file.txt", "a+") do |file|
+  file << "Here we are with more text
+end
+#block causes file to auto close
+
+Writing and Reading Files
+
+File.open("new_text", "w+") do |file|
+  file << "Hello there new file"
+end
+
+File.open("new_text", "a+") do |file|
+  file.write("Adding another line of text here")
+end
+
+#Reading a file and counting index lines
+File.readlines("new_text").each_with_index do |value, index|
+  puts  '#{index}: #{value}'
+end
+
+Deleting Files
+File.new("file_name.ext")
+File.delete("file_name.ext")
+Deletes file from file system. 
+
