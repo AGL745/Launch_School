@@ -1,0 +1,60 @@
+Block are like normal variables
+- Can be passed into a method like a normal variable
+
+#passing_block.rb
+
+def take_block(&block)
+  block.call
+end
+
+take_block do
+  puts "Block being called in the method!"
+end 
+
+Procs are blocks wrapped in proc object 
+
+#proc_example.rb
+
+talk = Proc.new do
+  puts "I am talking."
+end
+
+talk.call 
+
+#Passing argument to proc
+talk = Proc.new do |name|
+  puts "I am talking to #{name}"
+end
+
+talk.call "Bob"
+
+Exceptional Handling - Allow your application to continue to function after error
+
+#Execption Handling Basic Structure
+begin
+  #perform some dangerous operation
+rescue
+  #do this if operation fails
+  #for example, log the error
+end
+
+names = ['bob', 'joe', 'steve', nil, 'frank']
+names.each do |name|
+  begin
+    puts "#{name}'s name has #{name.length} letters in it."
+  rescue
+    puts "Something went wrong!"
+  end
+end
+
+Rescue pre-existing errors when writing code
+
+def divide(number, dividor)
+  begin
+    answer = number / divisor
+  rescue ZeroDivisionError => e
+    puts e.message
+  end
+end 
+
+puts divide(4, 0)
