@@ -1,0 +1,81 @@
+Pesudo Code
+-Helps you load the problem into your brain
+-Seperated the two aspects of problem solving
+1. Logical Problem domain layer
+2. Syntactical programming language layer
+
+To verify logic pseudo code must be processed into logic
+
+Use of formal pseudo code to aide in breaking down the problem for interpretor translation.
+
+Keywords + Meaning 
+START   start a program
+SET     sets a variable for later use
+GET     retrieve input from user
+PRINT   display output
+READ    retrieve value from variable
+IF / ELSIF / ELSE conditional branches in logic
+WHILE   show looping logic
+END     end of program
+
+Pseudo Code Examples
+START
+SET iterator = 1
+SET saved_number = value at one in array
+
+WHILE iterator < length of numbers
+  SET current_number = value within numbers array[iterator value]
+  IF saved_number >= current_number 
+    go to the next iteration
+  ELSE
+    save_number = current_number[iterator value]
+
+    iterator = iterator + 1
+PRINT saved_number 
+
+Code
+def find_greatest(numbers)
+  saved_number = numbers[1]
+  do numbers.each do | value | 
+    if value >= saved_number 
+      next
+    else
+       saved_number = value 
+    end
+    puts save_value
+  end
+
+Exercise 1 A method that return the sum of two integers
+
+START
+PRINTS Prompt
+GETS num1 
+SET num1
+PRINTS promtp
+GETS num2
+SET num2 
+RETRIEVE, NUM1 + NUM2
+SET ANSWER = NUM1 + NUM2
+PRINTS ANSWER
+
+Exercise 2 Array of strings return a string concatenated together
+Start
+define method string_concat
+Get one parameter type array
+Join each index of array type string no spaces
+Print type string all letters from Array
+
+Exercise 3
+Method takes array integers return array every other element
+
+Start
+define method every_other
+Get parameter type array (integers)
+Create storage data structure type array
+Iterate array of ints
+if array index = 0,2,4,6...
+  Push value to storage array
+end
+return storage array
+
+
