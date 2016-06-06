@@ -1,0 +1,18 @@
+Coding Tips
+
+- You retain in infomation through time 9r through failure
+
+Namimg Formate
+snake_case when naming everything
+CamelCase when naming classes
+Uppercase when naming conSTANTS 
+Method namimg and writing guidelines
+-should be around 10lines
+-displays output or returns value
+-Methods with side effects must be identified through names
+(ex standard ruby library uses ! to denote change)
+-if you must search method implementation then its named incorrectly
+-should do 1 simple thing
+
+Method names should reflect mutation
+*def update_total(total, cards) e

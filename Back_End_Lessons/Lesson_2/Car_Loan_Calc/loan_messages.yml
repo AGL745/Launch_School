@@ -1,0 +1,7 @@
+#loan_messages.yml 
+
+welcome: "Welcome to the loan calculator. Hopefully this will aide in your financial goal! "
+intro: "Are these calculations for a new(Y) or existing(N) loan? (Y or N)"
+invalid: "Entry is invalid try again. "
+new_loan: "Okay lets calculate your monthly payments"
+existing: "Okay we have an existing loan lets calculate your remaining balance"

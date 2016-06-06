@@ -5,12 +5,16 @@
 # perform operation on the two numbers
 # out the results
 
-def prompt (message)
+require 'yaml'
+MESSAGES = YAML.load_file('calculator_messages.yml')
+
+def prompt(message)
   puts "=> #{message}"
 end
 
 def valid_number?(num)
-  num.to_i() != 0
+  num.to_i.to_s == num
+  #/^\d+$/.match(num) <-- regex returns true if integer and nil (False) if not
 end
 
 def operation_to_message(op)
@@ -25,13 +29,13 @@ def operation_to_message(op)
     'Dividing'
   end
 end
-prompt "Welcome to calculator"
+prompt MESSAGES['welcome']
 name = ''
 loop do
   prompt "Please enter your name: "
   name = gets().chomp()
   if name.empty?()
-    prompt "Make sure to use a valid name."
+    prompt MESSAGES['valid_name']
   else
     break
   end
@@ -43,7 +47,7 @@ loop do
   num2 = ''
 
   loop do
-    prompt "Enter the first number: "
+    prompt MESSAGES["first_digit"]
     num1 = gets().chomp()
     if valid_number?(num1)
       break

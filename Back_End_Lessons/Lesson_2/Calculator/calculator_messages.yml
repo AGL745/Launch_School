@@ -1,0 +1,8 @@
+#calculator_messages.yml
+#YAML gem parses through .yml file 
+
+welcome: "Welcome to Calculator!"
+
+valid_name: "Make sure to enter a valid name"
+
+first_digit: "Enter first number: "
