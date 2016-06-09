@@ -1,7 +1,10 @@
 
 # Launch School
-# Exercises 1 - Lesson 3
+# Exercises 2 - Lesson 3
 #  Allan Latty
+
+
+# Exercise 1
 
 ages = { "Herman" => 32, "Lily" => 30, "Grandpa" => 402, "Eddie" => 10 }
 

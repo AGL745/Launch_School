@@ -1,3 +1,7 @@
+# Launch School
+# Exercises 1 - Lesson 3
+#  Allan Latty
+
 numbers = [1, 2, 2, 3]
 numbers.uniq
 
