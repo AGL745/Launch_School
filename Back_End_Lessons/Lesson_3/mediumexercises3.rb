@@ -1,6 +1,6 @@
 # Launch School
 # Exercises Medium 3 - Lesson 3
-# Allan Latty
+# AGL
 
 #Question 1: Determine how object IDs are modified
 

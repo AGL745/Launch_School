@@ -1,6 +1,6 @@
 # Launch School
 # Exercises Medium 1 - Lesson 3
-# Allan Latty
+# AGL
 
 #Question 1: For this exercise, write a one-line program that creates the following output 10 times, with the subsequent line indented 1 space to the right:
 

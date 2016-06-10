@@ -1,6 +1,6 @@
 # Launch School
 # Exercises Medium 2 - Lesson 3
-# Allan Latty
+# AGL
 
 #Question 1: Figure out the total age of just the male members of the family.
 

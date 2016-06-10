@@ -1,7 +1,7 @@
 
 # Launch School
 # Exercises 2 - Lesson 3
-#  Allan Latty
+# AGL
 
 
 # Exercise 1
