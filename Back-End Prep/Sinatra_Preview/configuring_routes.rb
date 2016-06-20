@@ -1,8 +1,8 @@
-#Configuring Routes Using sinatra
+# Configuring Routes Using sinatra
 
 require 'sinatra'
 
-#use a hash to store multiple paths, one handler
+# use a hash to store multiple paths, one handler
 
 ['/this', '/that', '/other'].each do |route|
   get route do
@@ -17,5 +17,3 @@ require 'sinatra'
     "\"#{route}\" is my url path, using DELETE\n"
   end
 end
-
-
