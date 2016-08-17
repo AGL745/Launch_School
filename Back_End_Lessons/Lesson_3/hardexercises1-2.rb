@@ -74,7 +74,7 @@ puts "one is: #{one}"
 puts "two is: #{two}"
 puts "three is: #{three}", "\n"
 
-# Question 4:  Write a method that returns UUID when  called
+# Question 4:  Write a method that returns UUID when called
 
 # My first answer didn't really understand the question
 def uuid_method
@@ -82,7 +82,7 @@ def uuid_method
   sum.object_id
 end
 
-puts uuid_method , "\n"
+puts uuid_method, "\n"
 
 # Second attempt after seeing peaking at answer
 def uuid_creator
@@ -125,7 +125,7 @@ generate_UUID
 
  # Question 5: You're not returning a false condition, and not handling the case that there are more or fewer than 4 components to the IP address (e.g. "4.5.5" or "1.2.3.4.5" should be invalid)." Help Ben fix his code.
 
- #  My Answer
+ # My Answer
 def dot_separated_ip_address?(input_string)
   dot_separated_words = input_string.split(".")
   # p dot_separated_words
