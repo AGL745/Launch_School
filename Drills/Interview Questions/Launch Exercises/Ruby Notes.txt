@@ -1,0 +1,103 @@
+=begin
+What is a class - Blueprint for constructing computer models.
+
+What is an object - Instance of a class
+
+How to declare a constructor
+
+Symbols: Immutable and reusable and have same object_id
+
+What is unit testing
+
+Ruby duck typing
+
+Ruby testing tool - Rspec, FactoryGirl, Capybara, and Cucumber
+
+When to declare global variables
+
+Creating setter and getter methods
+
+Difference between class and instance variables
+
+Loop - For, while, and until
+
+Polymorphic association -
+
+What is a proc - short for procedures, act similar to blocks, but can be saved as variables and reused. A block capable of being called multiple times.
+
+What are  lambdas - Lambdas a similar to procedures(procs) in that they are blocks of code that can be called multiple times. However they take the exact number of declared parameters and arguments passed, returning error if the wrong number is passed (procedures - will set extra variables to nil). Lambdas are also capable of handling a return function.
+
+Method access controls (three levels)
+Public - accessible to all objects and subclasses of the class in which defined
+Private - Accessible to objects within the same class
+Protected - Only accessible within the same instance
+
+Functional Testing - Allows testing of various actions available to the controller. Uses Rails default mini test library. Function test use a collection of assert statements that tell the testing library what to expect. Controlled request are sent either as a get, post, patch, put, head, or delete request (http methods)
+
+What is Rails - Open source web app framework for Ruby programming language
+
+Environment Variables present in ruby - RUBYOPT, RUBYLIB, RUBYPATH, RUBYSHELL, RUBYLIB_PREFIX
+
+Use of super in RnR - Ruby uses super keyword to call the superclass implementation of the current method
+
+Use of load and require in ruby - Require() loads  and processed the Ruby code from a separate file, including classes, modules, methods, and constants; into the current scope.
+
+$GLOBAL variable
+
+Interpolation - Inserting a string into a literal
+
+Why do we need modules - Allow mix-ins and the provide name space. Modules cannot be initialized, like classes, but allow for multiple inheritance.
+
+Automated Testing -
+
+Dash Rocket (stabby lambda) - Stabby lambda (-> ) a literal for Lambda (syntax sugar)
+
+Date.today vs Date.current - Date.today gives you your system date. Date.current gives you system date plus ruby time zone applied. (Time.zone.today returns a date with time zone)
+
+Database Transactions -sets of changes, involving a single unit of execution
+
+Part 6.
+Ruby deletes unallocated space automatically
+
+Variables - Local, instance, global, and class.
+
+Class Variable @@ClassVariable - Single copy exists for each and every class
+
+Part 7.
+MVC - Model view controller
+ORM - Object-Relationship-Model - Classes are mapped to a table in the database. Objects are mapped to the rows in the table
+
+Active Record - AR is the M in MVC. Layer of system responsible for representing business data and logic. Allows for storage of the data used by the business logic.
+
+Part 8.
+plugin  vs gem - Gem available everywhere. plugins available to just that application
+
+Passenger - Easy and robust development of RoR app on appache and Ngix web servers. Passenger allows ruby language to run on linux servers
+
+Static vs Dynamic Scaffolding -
+Syntax of static scaffolding - ruby script/generate scaffold User Comment
+- Comment is the model
+- User is the controller
+
+With dynamic you definer (generate) each individually
+
+Session - Stores user information on the server
+Cookies - Stores user information on the client
+
+Include vs extend -
+Includes makes module's methods available to the instance of a class.
+Extend makes methods available to the class itself
+
+Part 9
+Model Definitions - Validations, relationships, callbacks, validation_group settings, RoR Queries in SQL
+has_one
+belongs_to
+has_many
+has_many : through
+
+Redirect vs render
+Redirect  is a method that is use to issue error message (302 error). Tells browser to issue a new request.
+Render shows page along with 200 series message.
+
+Ruby supports only single inheritance
+=end
