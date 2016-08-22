@@ -265,3 +265,116 @@ end
 # To replace all instances of a word, we can use the gsub! method. In this case, we use regex to look for a word in the string passed in and replace it with the corresponding digit.
 # The word to look for is interpolated into the regex, /\b#{word}\b/. \b is used to make sure that separate strings and not substrings are replaced within words. For instance, if the phrase/sentence passed into this method has the word "freight" in it, then that word will be left alone. Without using \b, the word "freight" would become "fr8".
 #
+
+def fibonacci(n)
+  return 1 if n <= 2
+  fibonacci(n - 1) + fibonacci(n-2)
+end
+
+=begin
+This solution is much faster than our original solution, and can handle much larger nth values. On the author's system, this solution returned results for an nth value of 8000 almost instantly; however, stack space is exceeded at values not much greater than 8000.
+=end
+def fibonacci_tail(n, acc1, acc2)
+  if n == 1
+    acc1
+  elsif n == 2
+    acc2
+  else
+    fibonacci_tail(n - 1, acc2, acc2 + acc1)
+  end
+end
+
+def fibonacci2(n)
+  fibonacci_tail(n, 1, 1)
+end
+
+=begin
+Matching parentheses
+Write a method that takes a string as argument, and returns true if all parentheses in the string are properly balanced, false otherwise. To be properly balanced, parentheses must occur in matching '(' and ')' pairs.
+
+balanced?('What (is) this?') == true
+balanced?('What is) this?') == false
+balanced?('What (is this?') == false
+balanced?('((What) (is this))?') == true
+balanced?('((What)) (is this))?') == false
+balanced?('Hey!') == true
+balanced?(')Hey!(') == false
+balanced?('What ((is))) up(') == false
+
+=end
+
+def balanced?(string)
+  parens = 0
+  string.each_char do |char|
+    parens += 1 if char == '('
+    parens -= 1 if char == ')'
+    # stops execution if improper parentheses ordering
+    break if parens < 0
+  end
+  parens.zero?
+end
+
+def balanced?2(string)
+  parens = 0
+  curly_brackets = 0
+  square_brackets = 0
+  single_quotation = 0
+  double_quotation = 0
+
+  string.each_char do |char|
+    parens += 1 if char == '('
+    parens -= 1 if char == ')'
+    curly_brackets += 1 if char == '{'
+    curly_brackets -= 1 if char == '}'
+    square_brackets += 1 if char == '['
+    square_brackets -= 1 if char == ']'
+    # quotations work on a pair matching bases.
+    single_quotation += 1 if char == %Q[']
+    double_quotation += 1 if char == %Q["]
+    break if parens < 0 || square_brackets < 0 || curly_brackets < 0
+  end
+
+  parens.zero? && square_brackets.zero? && curly_brackets.zero? && single_quotation.even? && double_quotation.even?
+end
+
+# Bubble Sort
+=begin
+A bubble sort works by making multiple passes (iterations) through the Array. On each pass, each pair of consecutive elements is compared. If the first of the two elements is greater than the second, then the two elements are swapped. This process is repeated until a complete pass is made without performing any swaps; at that point, the Array is completely sorted.
+
+Write a method that takes an Array as an argument, and sorts that Array using the bubble sort algorithm as just described. Note that your sort will be "in-place"; that is, you will mutate the Array passed as an argument. You may assume that the Array contains at least 2 elements.
+
+ex.
+array = [5, 3]
+bubble_sort!(array)
+array == [3, 5]
+
+array = [6, 2, 7, 1, 4]
+bubble_sort!(array)
+array == [1, 2, 4, 6, 7]
+
+array = %w(Sue Pete Alice Tyler Rachel Kim Bonnie)
+bubble_sort!(array)
+array == %w(Alice Bonnie Kim Pete Rachel Sue Tyler)
+=end
+
+def bubble_sort!(array)
+  loop do
+    swapped = false
+    1.upto(array.size - 1) do |index|
+      next if array[index - 1] <= array[index]
+      array[index - 1], array[index] = array[index], array[index - 1]
+      swapped = true
+    end
+    break unless swapped
+    end
+    nil
+  end
+
+=begin
+Discussion:
+
+Our outer loop handles the task of repeating iterations until the Array is completely sorted. It terminates the first time we iterate through all comparisons without making any swaps, which we keep track of through the swapped variable.
+
+The inner loop takes care of looking at every pair of consecutive elements and swapping them if the first element of a pair is greater than the second.
+a, b = b, a
+=end
